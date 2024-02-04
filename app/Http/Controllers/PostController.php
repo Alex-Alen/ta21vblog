@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
@@ -16,8 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->paginate();
-        return view('posts.index', compact('posts'));
+       $posts = Post::latest()->paginate();
+       return view('posts.index', compact('posts'));
     }
 
     /**
@@ -52,8 +51,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        $profiles = User::latest()->paginate();
-        return view('profiles.index', compact('profiles'));
+        //
     }
 
     /**
